@@ -1,4 +1,10 @@
-
+<?php
+session_start();
+if (!isset($_SESSION['user'])) {
+    header('Location: ../auth/login.php');
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,12 +12,16 @@
 </head>
 <body>
 
-<div class="container">
-<h1>Sakila CRUD</h1>
+<?php include __DIR__ . "/../partials/navbar.php"; ?>
 
-<a href="actor.php">CRUD Actor</a><br><br>
-<a href="film.php">CRUD Film</a>
+<div class="container">
+    <h1>Bienvenido, <?= htmlspecialchars($_SESSION['user']) ?></h1>
+
+    <p class="style-tag">Más de 1000 peliculas y 200 actores disponibles en nuestra base de datos.
+    Navega a Actores o Películas para gestionar el contenido.
+    </p>
 
 </div>
+
 </body>
 </html>

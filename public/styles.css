@@ -1,49 +1,154 @@
 body {
     font-family: Arial, sans-serif;
     background: #f4f6f9;
-    padding: 20px;
+    margin: 0;
+    padding: 0;
 }
 
-h1, h2 {
-    text-align: center;
+.style-tag {
+    color: #000;          /* Color negro */
+    font-size: 18px;     /* Aumenta el tamaño (puedes ajustar el número) */
+    font-weight: bold;   /* Aplica el estilo negrita */
 }
 
-.container {
-    width: 900px;
-    margin: auto;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-th, td {
-    border: 1px solid #ccc;
-    padding: 8px;
-}
-
-th {
-    background: #007bff;
+/* ===== NAVBAR ===== */
+.navbar {
+    background: #0d6efd;
     color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-a, button {
-    padding: 6px 10px;
-    background: #007bff;
+.navbar a {
     color: white;
     text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+.logout {
+    background: #dc3545;
+    padding: 6px 12px;
     border-radius: 4px;
 }
 
-a.delete {
-    background: red;
+/* ===== CONTAINER ===== */
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+/* ===== FORM ===== */
+form {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
 }
 
 form input {
-    padding: 6px;
-    margin: 5px;
+    padding: 10px;
+    font-size: 16px;
+    width: 220px;
+}
+
+form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #0d6efd;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+form a {
+    align-self: center;
+}
+
+/* ===== TABLE ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #0d6efd;
+    color: white;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* ===== BUTTONS ===== */
+a {
+    padding: 6px 12px;
+    border-radius: 4px;
+    background: #0d6efd;
+    color: white;
+    text-decoration: none;
+}
+
+a.delete {
+    background: #dc3545;
+}
+
+/* ===== PAGINATION ===== */
+.pagination {
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.pagination a {
+    padding: 8px 14px;
+    background: #e9ecef;
+    color: #000;
+    border-radius: 6px;
+}
+
+.pagination a.active {
+    background: #0d6efd;
+    color: white;
+}
+
+/* ===== LOGIN ===== */
+.login-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-box {
+    background: white;
+    padding: 40px;
+    width: 350px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ccc;
+}
+
+.login-box input,
+.login-box button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+}
+
+.error {
+    color: red;
+    margin-top: 10px;
 }
