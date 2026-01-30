@@ -1,0 +1,22 @@
+
+# Credenciales y archivos sensibles
+config/db.local.php
+config/db.php
+.env
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Dependencias (si usas Composer)
+vendor/
+
+# Archivos temporales
+*.tmp
+*.swp
+
+# Configuración de VS Code (opcional)
+.vscode/
