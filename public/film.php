@@ -1,5 +1,5 @@
 <?php
-require "../config/db.local.php";
+require "../config/db.php";
 
 // CREATE
 if (isset($_POST['add'])) {
