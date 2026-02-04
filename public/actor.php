@@ -1,6 +1,6 @@
 <?php
 require "../middleware/auth.php";
-require "../config/db.php";
+require "../config/db.local.php";
 
 /* PAGINACIÓN */
 $limit = 25;
