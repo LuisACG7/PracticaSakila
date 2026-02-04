@@ -1,11 +1,6 @@
 <?php
-session_start();
-if (!isset($_SESSION['user'])) {
-    header('Location: ../auth/login.php');
-    exit;
-}
-
-require "../config/db.local.php";
+require "../middleware/auth.php";
+require "../config/db.php";
 
 /* PAGINACIÓN */
 $limit = 25;
@@ -68,7 +63,6 @@ $pages = ceil($total / $limit);
 
 <?php include __DIR__ . "/../partials/navbar.php"; ?>
 
-
 <div class="container">
 <h2>CRUD ACTOR</h2>
 
@@ -91,8 +85,8 @@ $pages = ceil($total / $limit);
 <?php foreach ($actors as $a): ?>
 <tr>
 <td><?= $a['actor_id'] ?></td>
-<td><?= $a['first_name'] ?></td>
-<td><?= $a['last_name'] ?></td>
+<td><?= htmlspecialchars($a['first_name']) ?></td>
+<td><?= htmlspecialchars($a['last_name']) ?></td>
 <td>
 <a href="?edit=<?= $a['actor_id'] ?>">Editar</a>
 <a class="delete" href="?delete=<?= $a['actor_id'] ?>" onclick="return confirm('¿Eliminar actor?')">Eliminar</a>
@@ -103,12 +97,11 @@ $pages = ceil($total / $limit);
 
 <div class="pagination">
 <?php for ($i=1; $i<=$pages; $i++): ?>
-<a href="?page=<?= $i ?>" <?= $i==$page?'class="active"':'' ?>><?= $i ?></a>
+<a href="?page=<?= $i ?>" class="<?= $i==$page?'active':'' ?>"><?= $i ?></a>
 <?php endfor; ?>
 </div>
 
-<p>
-<a href="index.php">Volver</a>
+<p><a href="index.php">Volver</a></p>
 </div>
 
 </body>

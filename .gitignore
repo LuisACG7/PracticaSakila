@@ -1,6 +1,5 @@
 
 # Credenciales y archivos sensibles
-config/db.local.php
 .env
 
 # Archivos de sistema

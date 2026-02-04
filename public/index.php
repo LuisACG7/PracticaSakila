@@ -1,14 +1,10 @@
 <?php
-session_start();
-if (!isset($_SESSION['user'])) {
-    header('Location: ../auth/login.php');
-    exit;
-}
+require "../middleware/auth.php";
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -17,10 +13,10 @@ if (!isset($_SESSION['user'])) {
 <div class="container">
     <h1>Bienvenido, <?= htmlspecialchars($_SESSION['user']) ?></h1>
 
-    <p class="style-tag">Más de 1000 peliculas y 200 actores disponibles en nuestra base de datos.
-    Navega a Actores o Películas para gestionar el contenido.
+    <p class="style-tag">
+        Más de 1000 películas y 200 actores disponibles en nuestra base de datos.
+        Navega a Actores o Películas para gestionar el contenido.
     </p>
-
 </div>
 
 </body>
