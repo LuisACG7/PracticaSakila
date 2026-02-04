@@ -6,9 +6,9 @@ body {
 }
 
 .style-tag {
-    color: #000;          /* Color negro */
-    font-size: 18px;     /* Aumenta el tamaño (puedes ajustar el número) */
-    font-weight: bold;   /* Aplica el estilo negrita */
+    color: #000;          
+    font-size: 18px;     
+    font-weight: bold;   
 }
 
 /* ===== NAVBAR ===== */
