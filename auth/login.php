@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->execute([$username]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if ($user && password_verify($password, $user['password'])) {
+    if ($user && $password === $user['password']) {
         $_SESSION['user'] = $user['usuario'];
         header('Location: ../public/index.php');
         exit;
